@@ -3,6 +3,7 @@
 - Create React App
 - Configured TailwindCSS
 - Header
+- Sign Up
 
 # Features
 
