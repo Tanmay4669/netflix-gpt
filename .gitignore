@@ -26,3 +26,5 @@ firebase.js
 .firebaserc
 .firebase
 firebase.json
+
+.env
