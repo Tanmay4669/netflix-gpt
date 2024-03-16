@@ -18,6 +18,16 @@ const Login = () => {
     const message = checkValidData(email.current.value, password.current.value);
 
     setErrorMessage(message);
+
+    if (message) return;
+
+    //Sign In / Sign Up Logic
+
+    if (!isSignInForm) {
+      //Sign Up Logic
+    } else {
+      //Sign In Logic
+    }
   };
 
   const toggleSignInForm = () => {

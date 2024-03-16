@@ -7,6 +7,9 @@
 - Sign Up
 - Form Valdation
 - useRef Hook
+- Setup Firebase
+- Setup for Firebase Deployment
+- Create Signup User Account
 
 # Features
 
