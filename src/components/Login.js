@@ -1,8 +1,24 @@
+import { checkValidData } from "../utils/Validate";
 import Header from "./Header";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMesssage, setErrorMessage] = useState(null);
+
+  const email = useRef(null);
+  const password = useRef(null);
+
+  const handleButtonClick = () => {
+    //Validate the form data
+
+    // console.log(email.current.value);
+    //console.log(password.current.value);
+
+    const message = checkValidData(email.current.value, password.current.value);
+
+    setErrorMessage(message);
+  };
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -18,7 +34,10 @@ const Login = () => {
           alt="background-image"
         />
       </div>
-      <form className=" w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className=" w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-85"
+      >
         <h1 className="my-4 font-bold text-3xl">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
@@ -34,13 +53,20 @@ const Login = () => {
           type="text"
           placeholder="Email Address"
           className="p-4 my-4 w-full bg-gray-700"
+          ref={email}
         />
         <input
           type="password"
           placeholder="Password"
           className="p-4 my-4 w-full bg-gray-700"
+          ref={password}
         />
-        <button type="submit" className="p-4 my-6 bg-red-700 w-full rounded-lg">
+        <p className="text-red-600 font-semibold ">{errorMesssage}</p>
+        <button
+          type="submit"
+          className="p-4 my-6 bg-red-700 w-full rounded-lg"
+          onClick={handleButtonClick}
+        >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         <p className="py-4 text-gray-400">
