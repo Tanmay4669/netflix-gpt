@@ -16,6 +16,7 @@
 - Update Profile
 - BugFix: I the user is not logged in, Redirect / browse to login page and vice versa
 - Unsubscribed to the onAuthStateChanged callback
+- Added Hardcoded values to constant file.
 
 # Features
 
