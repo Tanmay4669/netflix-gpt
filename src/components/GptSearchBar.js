@@ -40,6 +40,7 @@ const GptSearchBar = () => {
 
     //If openAi doesn't work coz of billing then use hardcoded values for now for checking
     //Hardcoded are provided below as gptMovies
+    //Better Way: put an input box and ask user to provide their Key and then pass it to openai.js
 
     if (!gptResults.choices) {
       // TODO: Write Error Handling
@@ -73,7 +74,7 @@ const GptSearchBar = () => {
   };
 
   return (
-    <div className="pt-[35%] md:pt-[10%] flex justify-center">
+    <div className="pt-[40%] md:pt-[10%] flex justify-center">
       <form
         className="w-full md:w-1/2 bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}

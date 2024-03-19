@@ -5,13 +5,19 @@ import { LANDER_BACKGROUND } from "../utils/constants";
 
 const GptSearch = () => {
   return (
-    <div>
+    <>
       <div className="fixed -z-10">
-        <img src={LANDER_BACKGROUND} alt="background-image" />
+        <img
+          className="h-screen md:h-full object-cover"
+          src={LANDER_BACKGROUND}
+          alt="logo"
+        />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 
